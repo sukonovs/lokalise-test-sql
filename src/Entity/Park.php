@@ -10,6 +10,21 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Park
 {
+    const STATUS__CREATED  = 1;
+    const STATUS__WAITING  = 2;
+    const STATUS__ACTIVE   = 3;
+    const STATUS__CANCELED = 4;
+
+    /**
+     * @var array
+     */
+    private $validStatuses = [
+        self::STATUS__CREATED,
+        self::STATUS__WAITING,
+        self::STATUS__ACTIVE,
+        self::STATUS__CANCELED,
+    ];
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -272,6 +287,10 @@ class Park
      */
     public function setStatus(int $status): self
     {
+        if (!in_array($status, $this->validStatuses)) {
+            throw new \RangeException(sprintf("Invalid status: %d", $status));
+        }
+
         $this->status = $status;
 
         return $this;
