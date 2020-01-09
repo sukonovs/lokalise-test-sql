@@ -94,9 +94,15 @@ class Country
      */
     private $parks;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\User", mappedBy="country")
+     */
+    private $users;
+
     public function __construct()
     {
         $this->parks = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
     /**
@@ -395,6 +401,11 @@ class Country
         return $this->parks;
     }
 
+    /**
+     * @param Park $park
+     *
+     * @return $this
+     */
     public function addPark(Park $park): self
     {
         if (!$this->parks->contains($park)) {
@@ -405,6 +416,11 @@ class Country
         return $this;
     }
 
+    /**
+     * @param Park $park
+     *
+     * @return $this
+     */
     public function removePark(Park $park): self
     {
         if ($this->parks->contains($park)) {
@@ -412,6 +428,47 @@ class Country
             // set the owning side to null (unless already changed)
             if ($park->getCountry() === $this) {
                 $park->setCountry(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    /**
+     * @param User $user
+     *
+     * @return $this
+     */
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users[] = $user;
+            $user->setCountry($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param User $user
+     *
+     * @return $this
+     */
+    public function removeUser(User $user): self
+    {
+        if ($this->users->contains($user)) {
+            $this->users->removeElement($user);
+            // set the owning side to null (unless already changed)
+            if ($user->getCountry() === $this) {
+                $user->setCountry(null);
             }
         }
 

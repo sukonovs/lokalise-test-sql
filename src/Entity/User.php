@@ -19,9 +19,10 @@ class User
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Country", inversedBy="users")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $countryId;
+    private $country;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -144,21 +145,21 @@ class User
     }
 
     /**
-     * @return int|null
+     * @return Country|null
      */
-    public function getCountryId(): ?int
+    public function getCountry(): ?Country
     {
-        return $this->countryId;
+        return $this->country;
     }
 
     /**
-     * @param int $countryId
+     * @param Country|null $country
      *
      * @return $this
      */
-    public function setCountryId(int $countryId): self
+    public function setCountry(?Country $country): self
     {
-        $this->countryId = $countryId;
+        $this->country = $country;
 
         return $this;
     }
