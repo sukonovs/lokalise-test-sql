@@ -49,7 +49,7 @@ class UserQuery
 
         $types = [
             'statuses' => Connection::PARAM_INT_ARRAY,
-            'code' => \PDO::PARAM_INT,
+            'code' => \PDO::PARAM_STR,
 
         ];
 
