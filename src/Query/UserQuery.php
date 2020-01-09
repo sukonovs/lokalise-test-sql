@@ -28,8 +28,8 @@ class UserQuery
         $query = '
             SELECT user.phone_number as phoneNumber,
                    user.email,
-                   user_country.name,
-                   user_country.capital
+                   user_country.name as countryName,
+                   user_country.capital as countryCapital
             FROM user
                      JOIN park on user.id = user_id
                      JOIN country park_country on park.country_id = park_country.id
