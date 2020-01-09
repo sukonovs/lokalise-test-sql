@@ -89,16 +89,27 @@ class Park
      */
     private $createdAt;
 
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @return User|null
+     */
     public function getUser(): ?User
     {
         return $this->user;
     }
 
+    /**
+     * @param User|null $user
+     *
+     * @return $this
+     */
     public function setUser(?User $user): self
     {
         $this->user = $user;
@@ -106,11 +117,19 @@ class Park
         return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getProxyId(): ?int
     {
         return $this->proxyId;
     }
 
+    /**
+     * @param int $proxyId
+     *
+     * @return $this
+     */
     public function setProxyId(int $proxyId): self
     {
         $this->proxyId = $proxyId;
@@ -118,11 +137,19 @@ class Park
         return $this;
     }
 
+    /**
+     * @return Country|null
+     */
     public function getCountry(): ?Country
     {
         return $this->country;
     }
 
+    /**
+     * @param Country|null $country
+     *
+     * @return $this
+     */
     public function setCountry(?Country $country): self
     {
         $this->country = $country;
@@ -130,11 +157,19 @@ class Park
         return $this;
     }
 
+    /**
+     * @return \DateTimeInterface|null
+     */
     public function getSchedule(): ?\DateTimeInterface
     {
         return $this->schedule;
     }
 
+    /**
+     * @param \DateTimeInterface $schedule
+     *
+     * @return $this
+     */
     public function setSchedule(\DateTimeInterface $schedule): self
     {
         $this->schedule = $schedule;
@@ -142,11 +177,19 @@ class Park
         return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getPlannedOutgoingCalls(): ?int
     {
         return $this->plannedOutgoingCalls;
     }
 
+    /**
+     * @param int $plannedOutgoingCalls
+     *
+     * @return $this
+     */
     public function setPlannedOutgoingCalls(int $plannedOutgoingCalls): self
     {
         $this->plannedOutgoingCalls = $plannedOutgoingCalls;
@@ -154,11 +197,19 @@ class Park
         return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getPlannedIncomingCalls(): ?int
     {
         return $this->plannedIncomingCalls;
     }
 
+    /**
+     * @param int $plannedIncomingCalls
+     *
+     * @return $this
+     */
     public function setPlannedIncomingCalls(int $plannedIncomingCalls): self
     {
         $this->plannedIncomingCalls = $plannedIncomingCalls;
@@ -166,11 +217,19 @@ class Park
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getPin(): ?string
     {
         return $this->pin;
     }
 
+    /**
+     * @param string $pin
+     *
+     * @return $this
+     */
     public function setPin(string $pin): self
     {
         $this->pin = $pin;
@@ -178,11 +237,19 @@ class Park
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getRegisteredNumber(): ?string
     {
         return $this->registeredNumber;
     }
 
+    /**
+     * @param string $registeredNumber
+     *
+     * @return $this
+     */
     public function setRegisteredNumber(string $registeredNumber): self
     {
         $this->registeredNumber = $registeredNumber;
@@ -190,11 +257,19 @@ class Park
         return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getStatus(): ?int
     {
         return $this->status;
     }
 
+    /**
+     * @param int $status
+     *
+     * @return $this
+     */
     public function setStatus(int $status): self
     {
         $this->status = $status;
@@ -202,11 +277,19 @@ class Park
         return $this;
     }
 
+    /**
+     * @return \DateTimeInterface|null
+     */
     public function getScheduledAt(): ?\DateTimeInterface
     {
         return $this->scheduledAt;
     }
 
+    /**
+     * @param \DateTimeInterface $scheduledAt
+     *
+     * @return $this
+     */
     public function setScheduledAt(\DateTimeInterface $scheduledAt): self
     {
         $this->scheduledAt = $scheduledAt;
@@ -214,11 +297,19 @@ class Park
         return $this;
     }
 
+    /**
+     * @return \DateTimeInterface|null
+     */
     public function getRegisteredAt(): ?\DateTimeInterface
     {
         return $this->registeredAt;
     }
 
+    /**
+     * @param \DateTimeInterface $registeredAt
+     *
+     * @return $this
+     */
     public function setRegisteredAt(\DateTimeInterface $registeredAt): self
     {
         $this->registeredAt = $registeredAt;
@@ -226,11 +317,19 @@ class Park
         return $this;
     }
 
+    /**
+     * @return \DateTimeInterface|null
+     */
     public function getCancelledAt(): ?\DateTimeInterface
     {
         return $this->cancelledAt;
     }
 
+    /**
+     * @param \DateTimeInterface|null $cancelledAt
+     *
+     * @return $this
+     */
     public function setCancelledAt(?\DateTimeInterface $cancelledAt): self
     {
         $this->cancelledAt = $cancelledAt;
@@ -238,11 +337,19 @@ class Park
         return $this;
     }
 
+    /**
+     * @return bool|null
+     */
     public function getAlreadyAbroad(): ?bool
     {
         return $this->alreadyAbroad;
     }
 
+    /**
+     * @param bool $alreadyAbroad
+     *
+     * @return $this
+     */
     public function setAlreadyAbroad(bool $alreadyAbroad): self
     {
         $this->alreadyAbroad = $alreadyAbroad;
@@ -250,11 +357,19 @@ class Park
         return $this;
     }
 
+    /**
+     * @return \DateTimeInterface|null
+     */
     public function getCreatedAt(): ?\DateTimeInterface
     {
         return $this->createdAt;
     }
 
+    /**
+     * @param \DateTimeInterface $createdAt
+     *
+     * @return $this
+     */
     public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
         $this->createdAt = $createdAt;
