@@ -13,6 +13,17 @@ services:
       - mysql-volume:/var/lib/mysql
     networks:
       - app-network
+  php:
+    build:
+      context: .
+      dockerfile: .docker/php/Dockerfile
+    container_name: rs-lokalise-test-sql-php
+    volumes:
+      - .:/srv/app
+    networks:
+      - app-network
+    depends_on:
+      - mysql
 
 volumes:
   mysql-volume:
